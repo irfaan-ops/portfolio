@@ -13,31 +13,13 @@
     try { localStorage.setItem('theme', next); } catch (e) {}
   });
 
-  // ---- Dial ticks ----
-  var ticks = document.querySelector('.dial .ticks');
-  if (ticks) {
-    var ns = 'http://www.w3.org/2000/svg';
-    for (var i = 0; i < 60; i++) {
-      var major = i % 5 === 0;
-      var a = (i / 60) * Math.PI * 2;
-      var r1 = major ? 128 : 134, r2 = 142;
-      var l = document.createElementNS(ns, 'line');
-      l.setAttribute('x1', 200 + Math.sin(a) * r1);
-      l.setAttribute('y1', 200 - Math.cos(a) * r1);
-      l.setAttribute('x2', 200 + Math.sin(a) * r2);
-      l.setAttribute('y2', 200 - Math.cos(a) * r2);
-      if (major) l.setAttribute('class', 'major');
-      ticks.appendChild(l);
-    }
-  }
-
   // ---- Experience cards: one open at a time ----
   var cards = Array.prototype.slice.call(document.querySelectorAll('.exp'));
   function setOpen(card, open) {
     card.classList.toggle('open', open);
     var btn = card.querySelector('.exp-toggle');
     btn.setAttribute('aria-expanded', String(open));
-    card.querySelector('.exp-more-text').textContent = open ? 'Close' : 'Read more';
+    card.querySelector('.exp-more-text').textContent = open ? 'Close' : 'Discover';
   }
   cards.forEach(function (card) {
     card.querySelector('.exp-toggle').addEventListener('click', function () {
@@ -80,6 +62,10 @@
     }, { rootMargin: '-45% 0px -50% 0px' });
     sections.forEach(function (s) { if (s) navIo.observe(s); });
   }
+
+  var header = document.querySelector('.site-header');
+  function onScroll() { header.classList.toggle('scrolled', window.scrollY > 8); }
+  window.addEventListener('scroll', onScroll, { passive: true }); onScroll();
 
   var y = document.getElementById('year');
   if (y) y.textContent = new Date().getFullYear();

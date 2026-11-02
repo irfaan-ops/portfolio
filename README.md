@@ -25,6 +25,9 @@ All copy lives in `index.html`. Anything wrapped in `<mark class="ph">…</mark>
 text and shows with a dotted gold underline. Replace the text and remove the `mark` tags as real
 details are added, then delete the `.draft-bar` element at the top of the page.
 
-Each experience card has a `data-season` of `spring`, `summer`, `autumn` or `winter`, which sets
-its colours and background motif. To add a role, copy an `<article class="exp">` block and give
-its `aria-controls` and detail `id` a new number.
+Each career card has a `data-tone` (`emerald`, `oxblood`, `sapphire` or `cognac`) that sets its
+colour, and a `data-pattern` (`rosette`, `spiro`, `wave` or `rings`) that sets its engraved
+background pattern. To add a role, copy an `<article class="exp">` block and give its
+`aria-controls` and detail `id` a new number.
+
+The colour theme lives in the tokens at the top of `styles.css`.

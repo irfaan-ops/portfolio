@@ -4,14 +4,13 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Irfaan · Finance &amp; Supply Chain</title>
-  <meta name="description" content="Irfaan, Finance and Supply Chain Manager. Career, scope and selected experience.">
+  <meta name="description" content="Irfaan, Finance and Supply Chain Manager. About, areas of expertise and career.">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <script>
-    // Set theme before paint to avoid a flash.
     (function () {
       try {
         var t = localStorage.getItem('theme');
@@ -22,170 +21,120 @@
 </head>
 <body>
   <div class="draft-bar" role="note">
-    Draft: text in <mark class="ph">dotted gold</mark> is placeholder until the CV arrives.
+    Draft · text with a <mark class="ph">dotted underline</mark> is placeholder until the CV arrives
   </div>
 
   <header class="site-header">
-    <a class="monogram" href="#top" aria-label="Back to top">
-      <span class="monogram-mark">I</span>
-      <span class="monogram-name">Irfaan <mark class="ph">Surname</mark></span>
-    </a>
-    <nav class="nav" aria-label="Sections">
-      <a href="#about">About</a>
-      <a href="#scope">Scope</a>
-      <a href="#experience">Experience</a>
-      <a href="#contact">Contact</a>
-    </nav>
-    <button class="theme-toggle" type="button" aria-label="Switch colour theme">
-      <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><g stroke-linecap="round"><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></g></svg>
-      <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z"/></svg>
-    </button>
+    <div class="header-inner">
+      <a class="crest" href="#top" aria-label="Back to top">
+        <span class="crest-mark">I</span>
+      </a>
+      <nav class="nav" aria-label="Sections">
+        <a href="#about">About</a>
+        <a href="#expertise">Expertise</a>
+        <a href="#career">Career</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <button class="theme-toggle" type="button" aria-label="Switch between light and dark">
+        <span class="theme-toggle-label theme-light">Light</span>
+        <span class="theme-toggle-track" aria-hidden="true"><span class="theme-toggle-dot"></span></span>
+        <span class="theme-toggle-label theme-dark">Dark</span>
+      </button>
+    </div>
   </header>
 
   <main id="top">
-    <!-- ABOUT -->
-    <section class="hero" id="about">
-      <div class="hero-copy reveal">
-        <p class="eyebrow">Finance &amp; Supply Chain Manager</p>
-        <h1 class="display">Numbers that add up.<br><em>Goods that turn up.</em></h1>
-
-        <p class="lede">
-          I sit where the ledger meets the loading bay. For <mark class="ph">00</mark> years I have
-          helped businesses spend wisely, stock sensibly and close the month without drama.
-          I like a clean reconciliation, a forecast that holds, and a supplier who answers the phone.
-        </p>
-
-        <div class="hero-actions">
-          <a class="btn btn-solid" href="#experience">See the career</a>
-          <a class="btn btn-line" href="#contact">Start a conversation</a>
-        </div>
-
-        <dl class="facts">
-          <div><dt>Based in</dt><dd><mark class="ph">City, Country</mark></dd></div>
-          <div><dt>Experience</dt><dd><mark class="ph">00+ years</mark></dd></div>
-          <div><dt>Open to</dt><dd><mark class="ph">Roles · Consulting</mark></dd></div>
-        </dl>
-      </div>
-
-      <figure class="dial reveal" aria-label="A career in four seasons">
-        <svg viewBox="0 0 400 400" role="img" aria-hidden="true">
-          <defs>
-            <path id="ring-top" d="M40,200 A160,160 0 0 1 360,200"/>
-            <path id="ring-bottom" d="M40,200 A160,160 0 0 0 360,200"/>
-          </defs>
-          <circle class="dial-bezel" cx="200" cy="200" r="190"/>
-          <circle class="dial-face" cx="200" cy="200" r="172"/>
-          <!-- seasonal arcs -->
-          <path class="arc arc-spring" d="M200 40 A160 160 0 0 1 360 200"/>
-          <path class="arc arc-summer" d="M360 200 A160 160 0 0 1 200 360"/>
-          <path class="arc arc-autumn" d="M200 360 A160 160 0 0 1 40 200"/>
-          <path class="arc arc-winter" d="M40 200 A160 160 0 0 1 200 40"/>
-          <g class="ticks"></g>
-          <text class="dial-word" dy="3"><textPath href="#ring-top" startOffset="25%" text-anchor="middle">WINTER</textPath></text>
-          <text class="dial-word" dy="3"><textPath href="#ring-top" startOffset="75%" text-anchor="middle">SPRING</textPath></text>
-          <text class="dial-word" dy="3"><textPath href="#ring-bottom" startOffset="25%" text-anchor="middle">AUTUMN</textPath></text>
-          <text class="dial-word" dy="3"><textPath href="#ring-bottom" startOffset="75%" text-anchor="middle">SUMMER</textPath></text>
-          <text class="dial-brand" x="200" y="150" text-anchor="middle">IRFAAN</text>
-          <text class="dial-sub" x="200" y="268" text-anchor="middle">FINANCE · SUPPLY CHAIN</text>
-          <g class="hand hand-hour"><rect x="196" y="120" width="8" height="86" rx="4"/></g>
-          <g class="hand hand-minute"><rect x="198" y="78" width="4" height="128" rx="2"/></g>
-          <g class="hand hand-second"><rect x="199.25" y="64" width="1.5" height="156" rx=".75"/><circle cx="200" cy="96" r="5"/></g>
-          <circle class="dial-pin" cx="200" cy="200" r="7"/>
-        </svg>
-        <figcaption>One career, four seasons. Each experience below carries its season's colour.</figcaption>
-      </figure>
-    </section>
-
-    <!-- SCOPE -->
-    <section class="section" id="scope">
-      <header class="section-head reveal">
-        <p class="section-num">01</p>
-        <h2>The scope, at a glance</h2>
-        <p class="section-note">The ground I have covered so far. This is a starting list to confirm against my CV.</p>
-      </header>
-
-      <ul class="scope-grid">
-        <li class="scope reveal">
-          <span class="scope-icon" aria-hidden="true">
-            <svg viewBox="0 0 32 32"><path d="M5 26V14M12 26V8M19 26v-9M26 26V4"/></svg>
-          </span>
-          <h3>Financial planning &amp; analysis</h3>
-          <p>I build budgets and forecasts, then write the honest variance commentary that follows them.</p>
-          <span class="scope-tag"><mark class="ph">To confirm</mark></span>
-        </li>
-        <li class="scope reveal">
-          <span class="scope-icon" aria-hidden="true">
-            <svg viewBox="0 0 32 32"><rect x="5" y="6" width="22" height="20" rx="2"/><path d="M5 12h22M12 12v14"/></svg>
-          </span>
-          <h3>Accounting &amp; month-end close</h3>
-          <p>I run reconciliations, controls and a close calendar that is actually kept.</p>
-          <span class="scope-tag"><mark class="ph">To confirm</mark></span>
-        </li>
-        <li class="scope reveal">
-          <span class="scope-icon" aria-hidden="true">
-            <svg viewBox="0 0 32 32"><path d="M4 22h4l3-10h10l3 10h4"/><circle cx="11" cy="24" r="2.5"/><circle cx="21" cy="24" r="2.5"/></svg>
-          </span>
-          <h3>Procurement &amp; sourcing</h3>
-          <p>I choose suppliers, negotiate, and write contracts that survive contact with reality.</p>
-          <span class="scope-tag"><mark class="ph">To confirm</mark></span>
-        </li>
-        <li class="scope reveal">
-          <span class="scope-icon" aria-hidden="true">
-            <svg viewBox="0 0 32 32"><path d="M4 12l12-7 12 7v13H4z"/><path d="M10 25v-7h12v7"/></svg>
-          </span>
-          <h3>Inventory &amp; warehousing</h3>
-          <p>I set stock levels by data, not by whoever shouted loudest last quarter.</p>
-          <span class="scope-tag"><mark class="ph">To confirm</mark></span>
-        </li>
-        <li class="scope reveal">
-          <span class="scope-icon" aria-hidden="true">
-            <svg viewBox="0 0 32 32"><circle cx="7" cy="23" r="3"/><circle cx="25" cy="9" r="3"/><path d="M10 23h6a4 4 0 0 0 4-4v-6a4 4 0 0 1 4-4"/></svg>
-          </span>
-          <h3>Logistics &amp; distribution</h3>
-          <p>I tune routes, carriers and lead times for cost without losing the customer.</p>
-          <span class="scope-tag"><mark class="ph">To confirm</mark></span>
-        </li>
-        <li class="scope reveal">
-          <span class="scope-icon" aria-hidden="true">
-            <svg viewBox="0 0 32 32"><circle cx="16" cy="16" r="11"/><path d="M16 9v7l5 3"/></svg>
-          </span>
-          <h3>ERP, systems &amp; reporting</h3>
-          <p>I get the system to tell the truth, then build the report people actually read.</p>
-          <span class="scope-tag"><mark class="ph">To confirm</mark></span>
-        </li>
-      </ul>
-
-      <dl class="tally reveal">
-        <div><dt><mark class="ph">00</mark></dt><dd>Years in finance &amp; supply chain</dd></div>
-        <div><dt><mark class="ph">00</mark></dt><dd>Organisations</dd></div>
-        <div><dt><mark class="ph">00</mark></dt><dd>Countries or markets</dd></div>
-        <div><dt><mark class="ph">0.0m</mark></dt><dd>Largest budget managed</dd></div>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-ornament" aria-hidden="true"></div>
+      <p class="eyebrow reveal">Finance &amp; Supply Chain Manager</p>
+      <h1 class="hero-name reveal">Irfaan <mark class="ph">Surname</mark></h1>
+      <div class="rule reveal" aria-hidden="true"><span></span></div>
+      <p class="hero-line reveal">
+        I make sure the numbers add up <em>and</em> the goods turn up.
+      </p>
+      <dl class="facts reveal">
+        <div><dt>Based in</dt><dd><mark class="ph">City, Country</mark></dd></div>
+        <div><dt>Experience</dt><dd><mark class="ph">00 years</mark></dd></div>
+        <div><dt>Open to</dt><dd><mark class="ph">Roles &amp; consulting</mark></dd></div>
       </dl>
     </section>
 
-    <!-- EXPERIENCE -->
-    <section class="section" id="experience">
-      <header class="section-head reveal">
-        <p class="section-num">02</p>
-        <h2>Experience, by season</h2>
-        <p class="section-note">Tap any card for the detail. Roles, companies and dates are placeholders.</p>
+    <!-- ABOUT -->
+    <section class="section about" id="about">
+      <header class="section-label reveal">
+        <span class="section-num">01</span>
+        <h2>About</h2>
       </header>
+      <div class="about-body">
+        <p class="about-lead reveal">
+          I sit where the ledger meets the loading bay. For <mark class="ph">00</mark> years I have helped
+          businesses spend wisely, stock sensibly and close the month without drama.
+        </p>
+        <div class="about-cols reveal">
+          <p>
+            My work runs from the budget to the warehouse floor. I build forecasts that hold, negotiate with
+            suppliers who would rather not, and turn a stubborn ERP into reports people actually read.
+          </p>
+          <p>
+            I like a clean reconciliation, a short lead time and a supplier who answers the phone. Most of all,
+            I like a business where finance and operations tell the same story.
+            <mark class="ph">Add one personal line here.</mark>
+          </p>
+        </div>
+        <div class="tally reveal">
+          <div><strong><mark class="ph">00</mark></strong><span>Years in finance &amp; supply chain</span></div>
+          <div><strong><mark class="ph">00</mark></strong><span>Organisations</span></div>
+          <div><strong><mark class="ph">00</mark></strong><span>Countries or markets</span></div>
+          <div><strong><mark class="ph">0.0m</mark></strong><span>Largest budget managed</span></div>
+        </div>
+      </div>
+    </section>
 
-      <div class="exp-grid">
+    <!-- EXPERTISE -->
+    <section class="section" id="expertise">
+      <header class="section-label reveal">
+        <span class="section-num">02</span>
+        <h2>Expertise</h2>
+      </header>
+      <div>
+        <p class="section-note reveal">The ground I have covered so far. <mark class="ph">To confirm against my CV.</mark></p>
+        <ol class="menu">
+          <li class="reveal"><span class="menu-num">i</span><h3>Financial planning &amp; analysis</h3><p>I build budgets and forecasts, then write the honest variance commentary that follows them.</p></li>
+          <li class="reveal"><span class="menu-num">ii</span><h3>Accounting &amp; month-end close</h3><p>I run reconciliations, controls and a close calendar that is actually kept.</p></li>
+          <li class="reveal"><span class="menu-num">iii</span><h3>Procurement &amp; sourcing</h3><p>I choose suppliers, negotiate, and write contracts that survive contact with reality.</p></li>
+          <li class="reveal"><span class="menu-num">iv</span><h3>Inventory &amp; warehousing</h3><p>I set stock levels by data, not by whoever shouted loudest last quarter.</p></li>
+          <li class="reveal"><span class="menu-num">v</span><h3>Logistics &amp; distribution</h3><p>I tune routes, carriers and lead times for cost without losing the customer.</p></li>
+          <li class="reveal"><span class="menu-num">vi</span><h3>ERP, systems &amp; reporting</h3><p>I get the system to tell the truth, then build the report people actually read.</p></li>
+        </ol>
+      </div>
+    </section>
 
-        <article class="exp reveal" data-season="spring">
+    <!-- CAREER -->
+    <section class="section career" id="career">
+      <header class="section-label reveal">
+        <span class="section-num">03</span>
+        <h2>Career</h2>
+      </header>
+      <div>
+        <p class="section-note reveal">Most recent first. Select a role to see the detail.</p>
+        <div class="exp-list">
+        <article class="exp reveal" data-tone="emerald" data-pattern="rosette">
           <button class="exp-toggle" type="button" aria-expanded="false" aria-controls="exp-1-detail">
-            <span class="exp-meta"><span class="exp-season">Spring</span><span class="exp-dates"><mark class="ph">20XX – 20XX</mark></span></span>
-            <span class="exp-role"><mark class="ph">Graduate Finance Analyst</mark></span>
-            <span class="exp-org"><mark class="ph">Company name · City</mark></span>
-            <span class="exp-summary">Where I started: learning the ledger line by line, and why the warehouse count never matches the system.</span>
-            <span class="exp-more" aria-hidden="true"><span class="exp-more-text">Read more</span><span class="plus"></span></span>
+            <span class="exp-num" aria-hidden="true">I</span>
+            <span class="exp-head">
+              <span class="exp-dates"><mark class="ph">20XX – Present</mark></span>
+              <span class="exp-role"><mark class="ph">Finance &amp; Supply Chain Manager</mark></span>
+              <span class="exp-org"><mark class="ph">Company name · City</mark></span>
+            </span>
+            <span class="exp-summary">My current role. I look after both the numbers and the network, so the business spends with intent and delivers on time.</span>
+            <span class="exp-more" aria-hidden="true"><span class="exp-more-text">Discover</span><span class="exp-line"></span></span>
           </button>
           <div class="exp-detail" id="exp-1-detail" role="region">
             <div class="exp-detail-inner">
               <div class="exp-cols">
                 <div>
-                  <h4>What the role covered</h4>
+                  <h4>What the role covers</h4>
                   <ul>
                     <li><mark class="ph">Responsibility one, in a single clear line.</mark></li>
                     <li><mark class="ph">Responsibility two, in a single clear line.</mark></li>
@@ -193,25 +142,27 @@
                   </ul>
                 </div>
                 <div>
-                  <h4>What changed because of it</h4>
+                  <h4>What has changed so far</h4>
                   <ul class="results">
-                    <li><strong><mark class="ph">00%</mark></strong> <mark class="ph">measurable result</mark></li>
-                    <li><strong><mark class="ph">0 days</mark></strong> <mark class="ph">measurable result</mark></li>
+                    <li><strong><mark class="ph">00%</mark></strong><span><mark class="ph">Measurable result</mark></span></li>
+                    <li><strong><mark class="ph">0.0m</mark></strong><span><mark class="ph">Measurable result</mark></span></li>
                   </ul>
                 </div>
               </div>
-              <p class="exp-tools"><span>Tools</span> <mark class="ph">Excel · ERP · …</mark></p>
+              <p class="exp-tools"><span>Tools</span> <mark class="ph">ERP · Planning · BI · …</mark></p>
             </div>
           </div>
         </article>
-
-        <article class="exp reveal" data-season="summer">
+        <article class="exp reveal" data-tone="oxblood" data-pattern="spiro">
           <button class="exp-toggle" type="button" aria-expanded="false" aria-controls="exp-2-detail">
-            <span class="exp-meta"><span class="exp-season">Summer</span><span class="exp-dates"><mark class="ph">20XX – 20XX</mark></span></span>
-            <span class="exp-role"><mark class="ph">Supply Chain Analyst</mark></span>
-            <span class="exp-org"><mark class="ph">Company name · City</mark></span>
-            <span class="exp-summary">Where I crossed from finance into operations, and learned forecasts, purchase orders and the art of the polite chase.</span>
-            <span class="exp-more" aria-hidden="true"><span class="exp-more-text">Read more</span><span class="plus"></span></span>
+            <span class="exp-num" aria-hidden="true">II</span>
+            <span class="exp-head">
+              <span class="exp-dates"><mark class="ph">20XX – 20XX</mark></span>
+              <span class="exp-role"><mark class="ph">Finance &amp; Procurement Lead</mark></span>
+              <span class="exp-org"><mark class="ph">Company name · City</mark></span>
+            </span>
+            <span class="exp-summary">I led a team, owned the budget and renegotiated the contracts everyone assumed were fixed.</span>
+            <span class="exp-more" aria-hidden="true"><span class="exp-more-text">Discover</span><span class="exp-line"></span></span>
           </button>
           <div class="exp-detail" id="exp-2-detail" role="region">
             <div class="exp-detail-inner">
@@ -227,23 +178,25 @@
                 <div>
                   <h4>What changed because of it</h4>
                   <ul class="results">
-                    <li><strong><mark class="ph">00%</mark></strong> <mark class="ph">measurable result</mark></li>
-                    <li><strong><mark class="ph">0.0m</mark></strong> <mark class="ph">measurable result</mark></li>
+                    <li><strong><mark class="ph">00%</mark></strong><span><mark class="ph">Measurable result</mark></span></li>
+                    <li><strong><mark class="ph">0.0m</mark></strong><span><mark class="ph">Measurable result</mark></span></li>
                   </ul>
                 </div>
               </div>
-              <p class="exp-tools"><span>Tools</span> <mark class="ph">ERP · Planning tool · …</mark></p>
+              <p class="exp-tools"><span>Tools</span> <mark class="ph">ERP · Sourcing platform · …</mark></p>
             </div>
           </div>
         </article>
-
-        <article class="exp reveal" data-season="autumn">
+        <article class="exp reveal" data-tone="sapphire" data-pattern="wave">
           <button class="exp-toggle" type="button" aria-expanded="false" aria-controls="exp-3-detail">
-            <span class="exp-meta"><span class="exp-season">Autumn</span><span class="exp-dates"><mark class="ph">20XX – 20XX</mark></span></span>
-            <span class="exp-role"><mark class="ph">Finance &amp; Procurement Lead</mark></span>
-            <span class="exp-org"><mark class="ph">Company name · City</mark></span>
-            <span class="exp-summary">The harvest years. I led a team, owned the budget and renegotiated what everyone assumed was fixed.</span>
-            <span class="exp-more" aria-hidden="true"><span class="exp-more-text">Read more</span><span class="plus"></span></span>
+            <span class="exp-num" aria-hidden="true">III</span>
+            <span class="exp-head">
+              <span class="exp-dates"><mark class="ph">20XX – 20XX</mark></span>
+              <span class="exp-role"><mark class="ph">Supply Chain Analyst</mark></span>
+              <span class="exp-org"><mark class="ph">Company name · City</mark></span>
+            </span>
+            <span class="exp-summary">Here I crossed from finance into operations and learned forecasting, purchasing and the art of the polite chase.</span>
+            <span class="exp-more" aria-hidden="true"><span class="exp-more-text">Discover</span><span class="exp-line"></span></span>
           </button>
           <div class="exp-detail" id="exp-3-detail" role="region">
             <div class="exp-detail-inner">
@@ -259,29 +212,31 @@
                 <div>
                   <h4>What changed because of it</h4>
                   <ul class="results">
-                    <li><strong><mark class="ph">00%</mark></strong> <mark class="ph">measurable result</mark></li>
-                    <li><strong><mark class="ph">00</mark></strong> <mark class="ph">measurable result</mark></li>
+                    <li><strong><mark class="ph">00%</mark></strong><span><mark class="ph">Measurable result</mark></span></li>
+                    <li><strong><mark class="ph">0.0m</mark></strong><span><mark class="ph">Measurable result</mark></span></li>
                   </ul>
                 </div>
               </div>
-              <p class="exp-tools"><span>Tools</span> <mark class="ph">ERP · BI tool · …</mark></p>
+              <p class="exp-tools"><span>Tools</span> <mark class="ph">ERP · Forecasting tool · …</mark></p>
             </div>
           </div>
         </article>
-
-        <article class="exp reveal" data-season="winter">
+        <article class="exp reveal" data-tone="cognac" data-pattern="rings">
           <button class="exp-toggle" type="button" aria-expanded="false" aria-controls="exp-4-detail">
-            <span class="exp-meta"><span class="exp-season">Winter</span><span class="exp-dates"><mark class="ph">20XX – Present</mark></span></span>
-            <span class="exp-role"><mark class="ph">Finance &amp; Supply Chain Manager</mark></span>
-            <span class="exp-org"><mark class="ph">Company name · City</mark></span>
-            <span class="exp-summary">My current chapter. I keep steady hands on both the numbers and the network, so there are fewer surprises for everyone.</span>
-            <span class="exp-more" aria-hidden="true"><span class="exp-more-text">Read more</span><span class="plus"></span></span>
+            <span class="exp-num" aria-hidden="true">IV</span>
+            <span class="exp-head">
+              <span class="exp-dates"><mark class="ph">20XX – 20XX</mark></span>
+              <span class="exp-role"><mark class="ph">Graduate Finance Analyst</mark></span>
+              <span class="exp-org"><mark class="ph">Company name · City</mark></span>
+            </span>
+            <span class="exp-summary">This is where I started. I learned the ledger line by line, and why the warehouse count never quite matches the system.</span>
+            <span class="exp-more" aria-hidden="true"><span class="exp-more-text">Discover</span><span class="exp-line"></span></span>
           </button>
           <div class="exp-detail" id="exp-4-detail" role="region">
             <div class="exp-detail-inner">
               <div class="exp-cols">
                 <div>
-                  <h4>What the role covers</h4>
+                  <h4>What the role covered</h4>
                   <ul>
                     <li><mark class="ph">Responsibility one, in a single clear line.</mark></li>
                     <li><mark class="ph">Responsibility two, in a single clear line.</mark></li>
@@ -289,27 +244,27 @@
                   </ul>
                 </div>
                 <div>
-                  <h4>What has changed so far</h4>
+                  <h4>What changed because of it</h4>
                   <ul class="results">
-                    <li><strong><mark class="ph">00%</mark></strong> <mark class="ph">measurable result</mark></li>
-                    <li><strong><mark class="ph">0.0m</mark></strong> <mark class="ph">measurable result</mark></li>
+                    <li><strong><mark class="ph">00%</mark></strong><span><mark class="ph">Measurable result</mark></span></li>
+                    <li><strong><mark class="ph">0.0m</mark></strong><span><mark class="ph">Measurable result</mark></span></li>
                   </ul>
                 </div>
               </div>
-              <p class="exp-tools"><span>Tools</span> <mark class="ph">ERP · Planning · BI · …</mark></p>
+              <p class="exp-tools"><span>Tools</span> <mark class="ph">Excel · ERP · …</mark></p>
             </div>
           </div>
         </article>
-
+        </div>
       </div>
     </section>
 
     <!-- CONTACT -->
-    <section class="section contact" id="contact">
-      <div class="contact-card reveal">
-        <p class="section-num">03</p>
-        <h2>Shall we balance the books?</h2>
-        <p>I am always happy to talk about roles, projects and the occasional supply chain puzzle.</p>
+    <section class="contact" id="contact">
+      <div class="contact-frame reveal">
+        <span class="section-num">04</span>
+        <h2>Shall we talk?</h2>
+        <p>I am always glad to discuss a role, a project or a supply chain puzzle that needs solving.</p>
         <div class="contact-links">
           <a class="btn btn-solid" href="mailto:hello@example.com"><mark class="ph">hello@example.com</mark></a>
           <a class="btn btn-line" href="#" rel="noopener"><mark class="ph">LinkedIn</mark></a>
@@ -321,7 +276,7 @@
 
   <footer class="site-footer">
     <span>© <span id="year">2026</span> Irfaan <mark class="ph">Surname</mark></span>
-    <a href="#top">Back to top ↑</a>
+    <a href="#top">Return to top</a>
   </footer>
 
   <script src="script.js" defer></script>
