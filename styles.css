@@ -23,7 +23,7 @@
   --card-ink: #f6f0e4;
   --card-line: #d9c79f;
 
-  --serif: "Cormorant Garamond", "Iowan Old Style", Georgia, serif;
+  --display: "League Gothic", "Helvetica Neue Condensed", "Arial Narrow", Impact, sans-serif;
   --sans: "Instrument Sans", "Segoe UI", system-ui, sans-serif;
   --wrap: 1120px;
   color-scheme: light;
@@ -86,7 +86,7 @@ mark.ph {
 .crest-mark {
   display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%;
   border: 1px solid var(--accent); color: var(--accent);
-  font: 500 21px/1 var(--serif);
+  font: 400 22px/1 var(--display); padding-top: 1px;
   box-shadow: inset 0 0 0 3px var(--bg), inset 0 0 0 4px color-mix(in srgb, var(--accent) 45%, transparent);
 }
 .nav { display: flex; gap: 36px; }
@@ -138,14 +138,14 @@ main { max-width: var(--wrap); margin: 0 auto; padding: 0 32px; }
   font-size: 11.5px; font-weight: 500; letter-spacing: .26em; text-transform: uppercase; color: var(--accent);
 }
 .hero-name {
-  font: 500 clamp(54px, 9vw, 112px)/1 var(--serif);
-  letter-spacing: .005em; margin: 22px 0 30px; text-wrap: balance;
+  font: 400 clamp(72px, 12vw, 152px)/.92 var(--display);
+  letter-spacing: .01em; text-transform: uppercase; margin: 22px 0 30px; text-wrap: balance;
 }
 .rule { display: flex; align-items: center; gap: 14px; width: min(320px, 70%); margin: 0 auto 30px; }
 .rule::before, .rule::after { content: ""; flex: 1; height: 1px; background: var(--accent); opacity: .55; }
 .rule span { width: 7px; height: 7px; transform: rotate(45deg); border: 1px solid var(--accent); }
-.hero-line { font: italic 400 clamp(22px, 2.6vw, 30px)/1.35 var(--serif); color: var(--ink-soft); text-wrap: balance; }
-.hero-line em { font-style: normal; color: var(--ink); }
+.hero-line { font: 400 clamp(18px, 1.9vw, 22px)/1.5 var(--sans); color: var(--ink-soft); text-wrap: balance; }
+.hero-line em { font-style: normal; color: var(--accent); }
 
 .facts {
   display: inline-grid; grid-template-columns: repeat(3, auto); margin: 56px 0 0;
@@ -154,7 +154,7 @@ main { max-width: var(--wrap); margin: 0 auto; padding: 0 32px; }
 .facts div { padding: 16px 36px; }
 .facts div + div { border-left: 1px solid var(--line); }
 .facts dt { font-size: 10.5px; letter-spacing: .22em; text-transform: uppercase; color: var(--ink-soft); }
-.facts dd { margin: 4px 0 0; font: 500 20px/1.3 var(--serif); }
+.facts dd { margin: 4px 0 0; font: 400 24px/1.2 var(--display); letter-spacing: .04em; text-transform: uppercase; }
 
 /* ---------- sections ---------- */
 .section {
@@ -162,16 +162,16 @@ main { max-width: var(--wrap); margin: 0 auto; padding: 0 32px; }
   padding: 104px 0; border-top: 1px solid var(--line);
 }
 .section-label { position: sticky; top: 110px; align-self: start; display: grid; gap: 10px; }
-.section-label h2 { font: 500 clamp(36px, 4vw, 48px)/1 var(--serif); }
+.section-label h2 { font: 400 clamp(44px, 5vw, 60px)/.95 var(--display); letter-spacing: .02em; text-transform: uppercase; }
 .section-note { color: var(--ink-soft); margin-bottom: 36px; max-width: 60ch; }
 
 /* about */
-.about-lead { font: 400 clamp(26px, 3vw, 36px)/1.3 var(--serif); max-width: 30ch; text-wrap: balance; margin-bottom: 36px; }
+.about-lead { font: 400 clamp(21px, 2.2vw, 26px)/1.5 var(--sans); color: var(--ink); max-width: 40ch; text-wrap: balance; margin-bottom: 36px; }
 .about-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; color: var(--ink-soft); }
 .tally { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 56px; border-top: 1px solid var(--line); }
 .tally div { padding: 22px 20px 0 0; display: grid; gap: 6px; align-content: start; }
 .tally div + div { padding-left: 20px; border-left: 1px solid var(--line); }
-.tally strong { font: 500 44px/1 var(--serif); color: var(--brand); font-variant-numeric: lining-nums tabular-nums; }
+.tally strong { font: 400 56px/1 var(--display); color: var(--brand); font-variant-numeric: lining-nums tabular-nums; }
 .tally span { font-size: 13px; color: var(--ink-soft); line-height: 1.45; }
 
 /* expertise as a menu */
@@ -181,8 +181,8 @@ main { max-width: var(--wrap); margin: 0 auto; padding: 0 32px; }
   padding: 22px 0; border-top: 1px solid var(--line);
 }
 .menu li:nth-last-child(-n+2) { border-bottom: 1px solid var(--line); }
-.menu-num { grid-row: span 2; font: italic 500 18px/1.6 var(--serif); color: var(--accent); }
-.menu h3 { font: 500 23px/1.25 var(--serif); margin-bottom: 4px; }
+.menu-num { grid-row: span 2; font: 400 22px/1.35 var(--display); letter-spacing: .06em; color: var(--accent); }
+.menu h3 { font: 400 26px/1.15 var(--display); letter-spacing: .04em; text-transform: uppercase; margin-bottom: 6px; }
 .menu p { color: var(--ink-soft); font-size: 15px; line-height: 1.6; }
 
 /* ---------- career cards ---------- */
@@ -225,10 +225,10 @@ main { max-width: var(--wrap); margin: 0 auto; padding: 0 32px; }
   padding: 40px 44px 36px;
 }
 .exp-toggle:focus-visible { outline: 1.5px solid var(--card-line); outline-offset: -14px; }
-.exp-num { grid-area: num; font: 500 22px/1.3 var(--serif); color: var(--card-line); letter-spacing: .06em; }
+.exp-num { grid-area: num; font: 400 30px/1 var(--display); color: var(--card-line); letter-spacing: .06em; }
 .exp-head { grid-area: head; display: grid; gap: 6px; align-content: start; }
 .exp-dates { font-size: 11px; letter-spacing: .22em; text-transform: uppercase; opacity: .78; }
-.exp-role { font: 500 clamp(28px, 3vw, 36px)/1.1 var(--serif); text-wrap: balance; }
+.exp-role { font: 400 clamp(36px, 3.8vw, 48px)/.98 var(--display); letter-spacing: .02em; text-transform: uppercase; text-wrap: balance; }
 .exp-org { font-size: 14.5px; opacity: .8; }
 .exp-summary { grid-area: summary; font-size: 15.5px; line-height: 1.65; opacity: .9; padding-top: 22px; }
 .exp-more {
@@ -258,7 +258,7 @@ main { max-width: var(--wrap); margin: 0 auto; padding: 0 32px; }
 .results { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
 .results li { padding-left: 0 !important; margin: 0 !important; display: grid; gap: 4px; }
 .results li::before { display: none; }
-.results strong { font: 500 38px/1 var(--serif); }
+.results strong { font: 400 50px/1 var(--display); letter-spacing: .02em; }
 .results span { font-size: 13.5px; opacity: .8; }
 .exp-tools { margin-top: 26px; font-size: 14px; opacity: .9; }
 .exp-tools span { font-size: 10.5px; letter-spacing: .24em; text-transform: uppercase; color: var(--card-line); margin-right: 10px; }
@@ -278,7 +278,7 @@ main { max-width: var(--wrap); margin: 0 auto; padding: 0 32px; }
   background: url("assets/guilloche-rosette.svg") center / contain no-repeat; opacity: .12;
 }
 .contact-frame .section-num { color: var(--band-accent); }
-.contact-frame h2 { font: 500 clamp(40px, 5.4vw, 64px)/1.05 var(--serif); margin: 14px 0 16px; }
+.contact-frame h2 { font: 400 clamp(56px, 7vw, 96px)/.95 var(--display); letter-spacing: .02em; text-transform: uppercase; margin: 14px 0 18px; }
 .contact-frame p { max-width: 48ch; margin: 0 auto; opacity: .85; }
 .contact-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 36px; }
 .btn {
