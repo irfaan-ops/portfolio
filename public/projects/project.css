@@ -209,5 +209,12 @@
 #pj-pause[aria-pressed="true"] .i-play { display: block; }
 #pj-pause[aria-pressed="true"] .i-pause { display: none; }
 @media (max-width: 720px) {
-  .walk-steps { right: 16px; top: calc(var(--hh) + 14px); }
+  .walk-steps { right: 16px; top: 14px; }
+  .walk-bar { top: 0; }
+  /* on phones the photos sit above the text, like the drawing, and fade out beneath it */
+  .stage-walk {
+    top: var(--hh); bottom: auto; height: 58vh; height: 58svh;
+    -webkit-mask-image: linear-gradient(to bottom, #000 70%, transparent);
+            mask-image: linear-gradient(to bottom, #000 70%, transparent);
+  }
 }

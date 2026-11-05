@@ -70,6 +70,6 @@ and `s` is the zoom). Pushing in (a larger `s` at the end) reads as walking forw
 as stepping back. Scenes whose photo is missing are skipped, so the page still works before the
 photos are added. Visitors can pause it; with reduced motion the scenes simply crossfade.
 
-Mansard Riyadh expects its photos at `public/assets/projects/mansard-riyadh/`:
-`01-facade.jpg`, `02-entrance.jpg`, `03-foyer.jpg` and `04-lobby.jpg`. Landscape images about
-2400px wide, saved as JPEG at around 80% quality, keep the page quick.
+
+The Mansard Riyadh photos are in `public/assets/projects/mansard-riyadh/` as WebP files of about 2000px
+wide (roughly 130–210 KB each). Saving new photos the same way keeps the page quick.
