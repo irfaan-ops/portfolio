@@ -34,6 +34,28 @@ window.PROJECTS = [
     // Optional: a photo or render (path under /assets/projects/) to fade in once the drawing completes.
     photo: null,
 
+    // Walk-through that follows the drawing: from the facade, along the street to the entrance,
+    // through the reception into the lobby, then back out to the entrance.
+    // Camera moves: x/y in % of the frame, s = scale (bigger = closer). Missing photos are skipped.
+    walkthrough: [
+      { src: '/assets/projects/mansard-riyadh/01-facade-night.webp',   label: 'The facade',
+        dur: 6.5, from: { x: 0, y: 1, s: 1.02 },    to: { x: 0, y: -1, s: 1.1 } },
+      { src: '/assets/projects/mansard-riyadh/02-facade-street.webp',  label: 'Along the street',
+        dur: 6,   from: { x: 2.5, y: 0, s: 1.08 },  to: { x: -2.5, y: 0, s: 1.14 } },
+      { src: '/assets/projects/mansard-riyadh/03-entrance.webp',       label: 'The entrance',
+        dur: 5.5, from: { x: 0, y: 0, s: 1.0 },     to: { x: 0, y: -2, s: 1.22 }, focus: '50% 70%' },
+      { src: '/assets/projects/mansard-riyadh/04-entrance-close.webp', label: 'The entrance',
+        dur: 5,   from: { x: 0, y: 0, s: 1.04 },    to: { x: 0, y: -3, s: 1.28 }, focus: '50% 62%' },
+      { src: '/assets/projects/mansard-riyadh/05-foyer.webp',          label: 'The foyer',
+        dur: 6,   from: { x: 0, y: 1, s: 1.0 },     to: { x: 0, y: -1, s: 1.2 }, focus: '58% 55%' },
+      { src: '/assets/projects/mansard-riyadh/06-lobby.webp',          label: 'The lobby',
+        dur: 7,   from: { x: 2.5, y: 0, s: 1.06 },  to: { x: -2.5, y: -1, s: 1.18 } },
+      { src: '/assets/projects/mansard-riyadh/07-lobby-doors.webp',    label: 'Towards the doors',
+        dur: 6,   from: { x: -2, y: 0, s: 1.04 },   to: { x: 2, y: -1, s: 1.16 }, focus: '62% 50%' },
+      { src: '/assets/projects/mansard-riyadh/04-entrance-close.webp', label: 'Back to the entrance',
+        dur: 7,   from: { x: 0, y: -3, s: 1.28 },   to: { x: 0, y: 0, s: 1.0 }, focus: '50% 62%' }
+    ],
+
     // Elevation spec, in metres. This is an illustrative reading of the building, not a survey.
     facade: {
       groundExtend: 10,
@@ -43,15 +65,16 @@ window.PROJECTS = [
           x: 0,
           bays: [7.2, 8.4, 8.4, 8.4, 8.4, 8.4, 8.4, 7.2],
           levels: [
-            { name: 'GF',  h: 6.0, type: 'colonnade', opts: { entranceBays: [3, 4] } },
-            { name: 'L01', h: 4.2, type: 'curtain', opts: { module: 1.4 } },
-            { name: 'L02', h: 3.6, type: 'punched', opts: { perBay: 2, winW: 2.0 } },
-            { name: 'L03', h: 3.6, type: 'punched', opts: { perBay: 2, winW: 2.0 } },
-            { name: 'L04', h: 3.6, type: 'punched', opts: { perBay: 2, winW: 2.0 } },
-            { name: 'L05', h: 3.6, type: 'punched', opts: { perBay: 2, winW: 2.0 } },
-            { name: 'L06', h: 3.6, type: 'balcony' }
+            { name: 'GF',  h: 5.8, type: 'colonnade', opts: { entranceBays: [3, 4] } },
+            { name: 'L01', h: 3.9, type: 'punched', opts: { perBay: 2, winW: 1.5, sill: 0.35, headGap: 0.7 } },
+            { name: 'L02', h: 3.6, type: 'punched', opts: { perBay: 2, winW: 1.5, sill: 0.45, headGap: 0.6 } },
+            { name: 'L03', h: 3.6, type: 'punched', opts: { perBay: 2, winW: 1.5, sill: 0.45, headGap: 0.6 } }
           ],
-          roof: { type: 'mansard', h: 4.6, inset: 2.2, dormersPerBay: 2 }
+          // steep slate mansard with two tiers of dormers, as on the built facade
+          roof: { type: 'mansard', h: 7.2, inset: 1.8, dormers: [
+            { perBay: 2, w: 1.5, h: 2.1, y: 0.8, arched: true },
+            { perBay: 1, w: 1.1, h: 1.5, y: 4.2 }
+          ] }
         },
         {
           x: 78,
@@ -65,11 +88,10 @@ window.PROJECTS = [
       ],
       palms: [{ x: 105, h: 8.5, lean: 0.4 }, { x: 109, h: 6.8, lean: -0.3 }],
       notes: [
-        { x: 60.4, y: 30.5, dx: 19, dy: 0, text: 'MANSARD ROOF WITH DORMERS' },
-        { x: 59.0, y: 26.4, dx: 20, dy: 0, text: 'SERVICED APARTMENTS · BALCONIES' },
-        { x: 60.0, y: 19.2, dx: 19, dy: 0, text: 'GUEST-ROOM FLOORS' },
-        { x: 61.0, y: 8.1, elbowX: 76.4, dx: 17.6, dy: 3.9, text: 'MEETING & EVENT LEVEL' },
-        { x: 92.0, y: 5.2, dx: 2, dy: 10, text: 'LONG-LEASE VILLAS' }
+        { x: 61.2, y: 20.4, dx: 18, dy: 0, text: 'SLATE MANSARD \u00B7 TWO TIERS OF DORMERS' },
+        { x: 60.0, y: 15.1, dx: 19, dy: 0, text: 'STONE FACADE \u00B7 FRENCH WINDOWS' },
+        { x: 60.0, y: 11.5, dx: 19, dy: 0, text: 'GUEST-ROOM FLOORS' },
+        { x: 92.0, y: 5.2, dx: 2.5, dy: 4.6, text: 'LONG-LEASE VILLAS' }
       ],
       titleBlock: { title: 'South elevation', sub: 'Scale 1:200 · dimensions in mm', ref: 'Mansard Riyadh · illustrative' }
     }

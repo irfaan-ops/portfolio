@@ -138,14 +138,22 @@
         }
         path('detail', 'dt faint', courses, P(E + 0.5), 0);
         path('struct', 'sl', seg(x0 + inset, T, x1 - inset, T) + seg(x1 - inset - 0.3, T - 0.3, x0 + inset + 0.3, T - 0.3), P(T), 0);
-        var per = r.dormersPerBay || 0;
-        if (per) b.bays.forEach(function (bw, bi) {
-          for (var k = 0; k < per; k++) {
-            var cx = b.lines[bi] + bw * (k + 0.5) / per, dw = r.dormerW || 1.5, dy = E + 0.7, dh = r.dormerH || 1.9;
-            if (cx - dw / 2 < x0 + inset * 0.6 || cx + dw / 2 > x1 - inset * 0.6) continue;
-            path('open', 'op', rect(cx - dw / 2, dy, dw, dh) + poly([[cx - dw / 2 - 0.25, dy + dh], [cx, dy + dh + 0.7], [cx + dw / 2 + 0.25, dy + dh]]), P(dy), Q(cx));
-            path('detail', 'dt', seg(cx, dy + 0.1, cx, dy + dh - 0.1) + seg(cx - dw / 2 + 0.1, dy + dh * 0.62, cx + dw / 2 - 0.1, dy + dh * 0.62), P(dy), Q(cx));
-          }
+        // dormers: one row from dormersPerBay, or several rows from `dormers`
+        var rows = r.dormers || (r.dormersPerBay ? [{ perBay: r.dormersPerBay, w: r.dormerW, h: r.dormerH }] : []);
+        rows.forEach(function (row) {
+          var per = row.perBay || 1, dw = row.w || 1.5, dh = row.h || 1.9, dy = E + (row.y == null ? 0.7 : row.y);
+          var slope = inset * Math.min(1, (dy + dh - E) / (T - E));
+          b.bays.forEach(function (bw, bi) {
+            for (var k = 0; k < per; k++) {
+              var cx = b.lines[bi] + bw * (k + 0.5) / per;
+              if (cx - dw / 2 < x0 + slope + 0.3 || cx + dw / 2 > x1 - slope - 0.3) continue;
+              var cap = row.arched
+                ? 'M' + X(cx - dw / 2 - 0.25) + ' ' + Y(dy + dh) + 'Q' + X(cx) + ' ' + Y(dy + dh + 1.3) + ' ' + X(cx + dw / 2 + 0.25) + ' ' + Y(dy + dh)
+                : poly([[cx - dw / 2 - 0.25, dy + dh], [cx, dy + dh + 0.7], [cx + dw / 2 + 0.25, dy + dh]]);
+              path('open', 'op', rect(cx - dw / 2, dy, dw, dh) + cap, P(dy), Q(cx));
+              path('detail', 'dt', seg(cx, dy + 0.1, cx, dy + dh - 0.1) + seg(cx - dw / 2 + 0.1, dy + dh * 0.62, cx + dw / 2 - 0.1, dy + dh * 0.62), P(dy), Q(cx));
+            }
+          });
         });
       } else if (r.type === 'parapet') {
         path('struct', 'sl', seg(x0 - 0.2, T, x1 + 0.2, T) + seg(x1 + 0.2, T - 0.25, x0 - 0.2, T - 0.25), P(T), 0);

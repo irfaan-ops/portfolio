@@ -60,3 +60,16 @@ To add a project:
    into `public/assets/projects/`, and commit them.
 4. Optionally set `photo` to an image under `public/assets/projects/`; the page fades to it once the
    drawing completes, and shows a button to switch between drawing and photograph.
+
+### Walk-through
+
+A project can follow its drawing with a photographic walk-through: each scene is a photo with a slow
+camera move, crossfading into the next. List the scenes under `walkthrough` in `data.js` (`src`,
+`label`, `dur` in seconds, and `from`/`to` camera positions, where `x`/`y` are percentages of the frame
+and `s` is the zoom). Pushing in (a larger `s` at the end) reads as walking forward; pulling out reads
+as stepping back. Scenes whose photo is missing are skipped, so the page still works before the
+photos are added. Visitors can pause it; with reduced motion the scenes simply crossfade.
+
+
+The Mansard Riyadh photos are in `public/assets/projects/mansard-riyadh/` as WebP files of about 2000px
+wide (roughly 130–210 KB each). Saving new photos the same way keeps the page quick.
