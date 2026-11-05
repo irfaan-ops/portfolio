@@ -34,3 +34,29 @@ background pattern. To add a role, copy an `<article class="exp">` block and giv
 `aria-controls` and detail `id` a new number.
 
 The colour theme lives in the tokens at the top of `public/styles.css`.
+
+## Projects
+
+The Projects section on the home page and each project page are built from `public/projects/data.js`.
+Each project opens at `/projects/?p=<slug>`, where its elevation draws itself as the page background:
+grid lines first, then the outline from the ground up, the structure floor by floor, the windows and
+façade details, and finally dimensions and annotations. Visitors can replay it, and anyone who has
+asked their device to reduce motion sees the finished drawing straight away.
+
+To add a project:
+
+1. Copy the Mansard Riyadh entry in `public/projects/data.js`, give it a new `slug`, and update the text.
+   Text in `[square brackets]` shows as a placeholder with a dotted underline.
+2. Describe its façade under `facade` (all sizes in metres):
+   - `blocks`: one per building mass, each with `x` (left edge), `bays` (structural grid widths, left to
+     right), `levels` (ground up) and a `roof`. Mark the main block with `main: true`.
+   - Level `type` is one of `colonnade` (tall ground floor with piers and shopfronts; `entranceBays`
+     picks the bays with the entrance canopy), `punched` (windows in a solid wall; `perBay`, `winW`),
+     `curtain` (glazed wall; `module` sets the mullion spacing), `balcony` (glazing behind projecting
+     balconies) or `screen` (windows behind a lattice screen).
+   - Roof `type` is `mansard` (`h`, `inset`, `dormersPerBay`), `parapet` (`h`) or `flat`.
+   - Optional `palms`, leader `notes` (`x`, `y`, `dx`, `dy`, optional `elbowX`, `text`) and a `titleBlock`.
+3. Run `node tools/render-elevations.js` to write the card thumbnail and the no-JavaScript fallback
+   into `public/assets/projects/`, and commit them.
+4. Optionally set `photo` to an image under `public/assets/projects/`; the page fades to it once the
+   drawing completes, and shows a button to switch between drawing and photograph.

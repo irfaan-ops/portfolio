@@ -37,6 +37,27 @@
     });
   });
 
+  // ---- Project cards (data in projects/data.js) ----
+  var grid = document.getElementById('proj-grid');
+  var projects = window.PROJECTS || [];
+  if (grid && projects.length) {
+    var esc = function (t) {
+      return String(t).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+        .replace(/\[([^\]]+)\]/g, '<mark class="ph">$1</mark>');
+    };
+    grid.innerHTML = projects.map(function (p, i) {
+      var num = ('0' + (i + 1)).slice(-2);
+      return '<a class="proj-card reveal" href="projects/?p=' + encodeURIComponent(p.slug) + '">' +
+        '<span class="proj-fig"><img src="assets/projects/' + p.slug + '-card.svg" alt="" loading="lazy" decoding="async" width="880" height="600"></span>' +
+        '<span class="proj-body">' +
+          '<span class="proj-meta"><span>' + num + '</span><span>' + esc(p.category || '') + '</span></span>' +
+          '<span class="proj-title">' + esc(p.title) + '</span>' +
+          '<span class="proj-loc">' + esc(p.location || '') + '</span>' +
+          '<span class="proj-more" aria-hidden="true"><span>View project</span><span class="exp-line"></span></span>' +
+        '</span></a>';
+    }).join('') + (projects.length % 2 ? '<div class="proj-card proj-soon reveal" aria-hidden="true"><span>More projects to come</span></div>' : '');
+  }
+
   // ---- Reveal on scroll ----
   var reveals = document.querySelectorAll('.reveal');
   if ('IntersectionObserver' in window) {
