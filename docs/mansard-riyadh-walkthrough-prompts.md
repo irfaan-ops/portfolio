@@ -16,7 +16,7 @@ These are 24 scenes, one for each supplied photo, set out as a single tour. The 
 - **Source Image File:** Property Facade-2.webp
 - **Walkthrough Direction:** The opening establishing shot. The camera drives forward along the empty road toward the long limestone frontage, with the slate mansard roof and the second building in the distance under a soft sunset sky.
 - **AI Video Generator Prompt:** "Cinematic real estate walkthrough footage starting exactly from the provided image. The camera executes a slow, ultra-smooth, stable forward dolly at road level along the empty asphalt, drifting slightly right toward the lit shopfronts of the limestone building while the slate mansard roofline and dormer windows stay level in frame, moving deeper into the space. Maintain 100% strict visual fidelity of the room structure, lighting, and textures. No morphing, no warping, and no newly invented objects. Hyper-realistic, 4k resolution, architectural showcase style."
-- **Transition Note:** Ends with the camera closer to the frontage. Crossfade (about 1 s) into Scene 1, because the light changes from sunset to daylight.
+- **Transition Note:** Ends with the camera closer to the frontage. Crossfade (about 1 s) into Scene 2, because the light changes from sunset to daylight.
 
 [Scene 2: Exterior, corner of the building]
 - **Source Image File:** Property Facade.webp
