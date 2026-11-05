@@ -34,6 +34,22 @@ window.PROJECTS = [
     // Optional: a photo or render (path under /assets/projects/) to fade in once the drawing completes.
     photo: null,
 
+    // Walk-through that follows the drawing: outer facade, entrance, foyer, lobby, then back
+    // to the entrance. Camera moves: x/y in % of the frame, s = scale (bigger = closer).
+    // Scenes whose photo is missing are skipped.
+    walkthrough: [
+      { src: '/assets/projects/mansard-riyadh/01-facade.jpg',   label: 'The facade',
+        dur: 7,   from: { x: 0, y: 1.5, s: 1.03 }, to: { x: -1.5, y: 0, s: 1.12 } },
+      { src: '/assets/projects/mansard-riyadh/02-entrance.jpg', label: 'The entrance',
+        dur: 6,   from: { x: 0, y: 0, s: 1.0 },    to: { x: 0, y: -1, s: 1.2 } },
+      { src: '/assets/projects/mansard-riyadh/03-foyer.jpg',    label: 'The foyer',
+        dur: 6,   from: { x: 1.5, y: 0, s: 1.04 }, to: { x: -1.5, y: -0.5, s: 1.18 } },
+      { src: '/assets/projects/mansard-riyadh/04-lobby.jpg',    label: 'The lobby',
+        dur: 7.5, from: { x: 0, y: 0, s: 1.02 },   to: { x: 0, y: -1, s: 1.24 } },
+      { src: '/assets/projects/mansard-riyadh/02-entrance.jpg', label: 'Back to the entrance',
+        dur: 7,   from: { x: 0, y: -1, s: 1.26 },  to: { x: 0, y: 0.5, s: 1.02 } }
+    ],
+
     // Elevation spec, in metres. This is an illustrative reading of the building, not a survey.
     facade: {
       groundExtend: 10,

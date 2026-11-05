@@ -31,6 +31,7 @@
 
   <!-- The drawing: fixed behind the page -->
   <div class="stage" aria-hidden="true">
+    <div class="stage-walk" id="pj-walk"></div>
     <div class="stage-frame">
       <img class="stage-photo" id="pj-photo" alt="" decoding="async" hidden>
       <svg class="fx" id="fx" preserveAspectRatio="xMidYMid meet" focusable="false"></svg>
@@ -51,6 +52,10 @@
           <button class="pj-btn" type="button" id="pj-replay">
             <svg viewBox="0 0 16 16" aria-hidden="true"><path d="M13 8a5 5 0 1 1-1.6-3.7M13 2.5v2.8h-2.8"/></svg>
             Replay drawing
+          </button>
+          <button class="pj-btn" type="button" id="pj-pause" hidden aria-pressed="false">
+            <svg viewBox="0 0 16 16" aria-hidden="true"><path class="i-pause" d="M5.5 3.5v9M10.5 3.5v9"/><path class="i-play" d="M5 3.2v9.6L12.6 8z"/></svg>
+            <span>Pause</span> walk-through
           </button>
           <button class="pj-btn" type="button" id="pj-photo-toggle" hidden aria-pressed="false">Show photograph</button>
           <a class="pj-btn pj-btn-ghost" href="#story">About the project <span aria-hidden="true">&darr;</span></a>
@@ -92,6 +97,7 @@
 
   <script src="/projects/data.js" defer></script>
   <script src="/projects/facade.js" defer></script>
+  <script src="/projects/walk.js" defer></script>
   <script src="/projects/project.js" defer></script>
 </body>
 </html>

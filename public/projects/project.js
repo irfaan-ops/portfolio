@@ -107,16 +107,55 @@
     });
   }
 
+  /* ---------- photographic walk-through, after the drawing ---------- */
+  var walk = null, pauseBtn = $('pj-pause');
+  if (project.walkthrough && project.walkthrough.length && window.Walk) {
+    walk = new window.Walk($('pj-walk'), project.walkthrough);
+    $('pj-replay').lastChild.textContent = ' Replay walk-through';
+  }
+  function setPaused(p) {
+    pauseBtn.setAttribute('aria-pressed', String(p));
+    pauseBtn.querySelector('span').textContent = p ? 'Play' : 'Pause';
+  }
+  function startWalk() {
+    if (!walk) return;
+    walk.load().then(function (list) {
+      if (!list.length || !root.classList.contains('awaiting-walk')) return;
+      root.classList.remove('awaiting-walk');
+      root.classList.add('walking');
+      pauseBtn.hidden = false;
+      setPaused(false);
+      walk.play({ still: reduce.matches }).then(function (finished) {
+        if (!finished) return;
+        root.classList.add('walk-done');
+        pauseBtn.hidden = true;
+      });
+    });
+  }
+  pauseBtn.addEventListener('click', function () {
+    if (!walk) return;
+    if (walk.state === 'playing') { walk.pause(); setPaused(true); }
+    else if (walk.state === 'paused') { walk.resume(); setPaused(false); }
+  });
+
   function run(instant) {
     clearTimeout(photoTimer);
     setPhoto(false);
+    if (walk) {
+      walk.cancel();
+      walk.load(); // start fetching photos while the drawing plays
+      pauseBtn.hidden = true;
+      root.classList.remove('walking', 'walk-done');
+      root.classList.add('awaiting-walk');
+    }
     root.classList.add('drawing');
     Facade.play(svg, {
       instant: instant || reduce.matches,
       onDone: function () {
         root.classList.remove('drawing');
+        if (walk) { setTimeout(startWalk, reduce.matches ? 1200 : 900); return; }
         // Optionally settle into the photograph once the drawing is complete.
-        if (project.photo && !reduce.matches) {
+        if (project.photo && !walk && !reduce.matches) {
           photo.src = project.photo;
           photo.hidden = false;
           photoTimer = setTimeout(function () { setPhoto(true); }, 2200);
@@ -147,6 +186,7 @@
   });
 
   /* ---------- quiet the drawing as the content scrolls over it ---------- */
+  function userPaused() { return pauseBtn.getAttribute('aria-pressed') === 'true'; }
   var ticking = false;
   function onScroll() {
     if (ticking) return;
@@ -154,6 +194,11 @@
     requestAnimationFrame(function () {
       var t = Math.min(1, window.scrollY / (window.innerHeight * 0.7));
       root.style.setProperty('--veil', t.toFixed(3));
+      // let the walk-through rest while the story covers it
+      if (walk && !userPaused()) {
+        if (t >= 1 && walk.state === 'playing') walk.pause();
+        else if (t < 1 && walk.state === 'paused') walk.resume();
+      }
       document.querySelector('.site-header').classList.toggle('scrolled', window.scrollY > 8);
       ticking = false;
     });
